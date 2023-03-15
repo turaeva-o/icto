@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<script src="../aframe/aframe.min.js"></script>
+		<script src="../arjs/aframe-ar.js"></script>
+		<script src="triangle.js"></script>
+	</head>
+	<body>
+		<a-scene embedded arjs>
+			<a-marker type='pattern' url='../assets/pattern-letterA.patt' registerevents id="A">
+				<a-sphere radius="0.10" color="red"></a-sphere>
+				<a-entity id="lineAB"></a-entity>
+			</a-marker>
+			<a-marker type='pattern' url='../assets/pattern-letterB.patt' registerevents id="B">
+				<a-sphere radius="0.10" color="red"></a-sphere>
+				<a-entity id="lineBC"></a-entity>
+			</a-marker>
+			<a-marker type='pattern' url='../assets/pattern-letterC.patt' registerevents id="C">
+				<a-sphere radius="0.10" color="red"></a-sphere>
+				<a-entity id="lineCA"></a-entity>
+			</a-marker>
+			<a-entity camera></a-entity>
+			<a-entity run></a-entity>
+		</a-scene>
+	</body>
+</html>
