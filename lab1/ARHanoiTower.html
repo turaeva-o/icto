@@ -1,0 +1,58 @@
+<!doctype html>
+
+<html>
+	<head>
+		<script src="../aframe/aframe.min.js"> </script>
+		<script src="../arjs/aframe-ar.js"></script>
+	</head>
+	<a-scene embedded arjs>
+ 		
+		<a-marker type="pattern" url="../assets/pattern-hanoi.patt">
+		<a-entity scale="0.3 0.3 0.3" rotation="-90 0 0">
+			<a-box position="-3 0 -5" color="black" depth="2" height="0.5" width="2"></a-box>
+			<a-box position="0 0 -5" color="black" depth="2" height="0.5" width="2"></a-box>
+			<a-box position="3 0 -5" color="black" depth="2" height="0.5" width="2"></a-box>
+		
+			<a-cylinder color="black" height="3.15" radius="0.2" position="-3 1.5 -5"></a-cylinder>
+			<a-cylinder color="black" height="3.15" radius="0.2" position="0 1.5 -5"></a-cylinder>
+			<a-cylinder color="black" height="3.15" radius="0.2" position="3 1.5 -5"></a-cylinder>
+
+			<a-torus color="#4B0082" arc="360" radius="0.3" radius-tubular="0.1" position="-3 2.85 -5" rotation="90 0 0" scale="0.8 0.8 1"
+				animation = "property: position; to: -3 4 -5; dur: 700; easing: linear; loop: 1"
+				animation__2 = "property: position; delay: 900; from: -3 4 -5; to: 3 4 -5; dur: 1200; easing: linear; loop: 1"
+				animation__3 = "property: position; delay: 2200; from: 3 4 -5; to: 3 0.45 -5; dur: 1000; easing: linear; loop: 1"></a-torus>
+
+			<a-torus color="#0000FF" arc="360" radius="0.3" radius-tubular="0.1" position="-3 2.45 -5" rotation="90 0 0" scale="1 1 1"
+				animation = "property: position; delay: 3500; to: -3 4 -5; dur: 400; easing: linear; loop: 1"
+				animation__2 = "property: position; delay: 4300; from: -3 4 -5; to: 0 4 -5; dur: 700; easing: linear; loop: 1"
+				animation__3 = "property: position; delay: 5100; from: 0 4 -5; to: 0 0.45 -5; dur: 1000; easing: linear; loop: 1"></a-torus>
+
+			<a-torus color="#1E90FF" arc="360" radius="0.3" radius-tubular="0.1" position="-3 2.05 -5" rotation="90 0 0" scale="1.2 1.2 1"
+				animation = "property: position; delay: 6500; to: -3 4 -5; dur: 700; easing: linear; loop: 1"
+				animation__2 = "property: position; delay: 7400; from: -3 4 -5; to: 3 4 -5; dur: 1200; easing: linear; loop: 1"
+				animation__3 = "property: position; delay: 8700; from: 3 4 -5; to: 3 0.85 -5; dur: 1000; easing: linear; loop: 1"></a-torus>
+
+			<a-torus color="#008000" arc="360" radius="0.3" radius-tubular="0.1" position="-3 1.65 -5" rotation="90 0 0" scale="1.4 1.4 1"
+				animation = "property: position; delay: 9800; to: -3 4 -5; dur: 400; easing: linear; loop: 1"
+				animation__2 = "property: position; delay: 10500; from: -3 4 -5; to: 0 4 -5; dur: 700; easing: linear; loop: 1"
+				animation__3 = "property: position; delay: 11300; from: 0 4 -5; to: 0 0.85 -5; dur: 1000; easing: linear; loop: 1"></a-torus>
+
+			<a-torus color="#FFFF00" arc="360" radius="0.3" radius-tubular="0.1" position="-3 1.25 -5" rotation="90 0 0" scale="1.6 1.6 1"
+				animation = "property: position; delay: 12400; to: -3 4 -5; dur: 700; easing: linear; loop: 1"
+				animation__2 = "property: position; delay: 13200; from: -3 4 -5; to: 3 4 -5; dur: 1200; easing: linear; loop: 1"
+				animation__3 = "property: position; delay: 14500; from: 3 4 -5; to: 3 1.25 -5; dur: 1000; easing: linear; loop: 1"></a-torus>
+
+			<a-torus color="#FF8C00" arc="360" radius="0.3" radius-tubular="0.1" position="-3 0.85 -5" rotation="90 0 0" scale="1.8 1.8 1"
+				animation = "property: position; delay: 15600; to: -3 4 -5; dur: 400; easing: linear; loop: 1"
+				animation__2 = "property: position; delay: 16100; from: -3 4 -5; to: 0 4 -5; dur: 700; easing: linear; loop: 1"
+				animation__3 = "property: position; delay: 16900; from: 0 4 -5; to: 0 1.25 -5; dur: 1000; easing: linear; loop: 1"></a-torus>
+
+			<a-torus color="#FF0000" arc="360" radius="0.3" radius-tubular="0.1" position="-3 0.45 -5" rotation="90 0 0" scale="2 2 1"
+				animation = "property: position; delay: 18000; to: -3 4 -5; dur: 700; easing: linear; loop: 1"
+				animation__2 = "property: position; delay: 18800; from: -3 4 -5; to: 3 4 -5; dur: 1200; easing: linear; loop: 1"
+				animation__3 = "property: position; delay: 20100; from: 3 4 -5; to: 3 1.65 -5; dur: 1000; easing: linear; loop: 1"></a-torus>  
+		</a-entity>
+		</a-marker>
+		<a-entity camera></a-entity>
+ 	</a-scene>
+</html>
