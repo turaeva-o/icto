@@ -1,5 +1,7 @@
 import * as THREE from '../three/three.module.js';
-import { GLTFLoader } from '../three/addons/loaders/GLTFLoader.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+
+
 function main() {
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(80, 2, 0.1, 50000);
@@ -123,8 +125,8 @@ loader.load( '../assets/cat.glb', function ( cat ) {
        // arjs.add(new THREE.Mesh(geom, material2), longitude, latitude - 0.001); // slightly south
         //arjs.add(new THREE.Mesh(geom, material3), longitude - 0.001, latitude); // slightly west
       //  arjs.add(new THREE.Mesh(geom, material4), longitude + 0.001, latitude); // slightly east
-	   // arjs.add(new THREE.Mesh(loader), longitude + 0.001, latitude);
-	    cat.scene.position.set(longitude + 0.001, -Math.PI/2, latitude);
+	   arjs.add(new THREE.Mesh(loader), longitude + 0.001, latitude);
+	   // cat.scene.position.set(longitude + 0.001, -Math.PI/2, latitude);
     }
 
     requestAnimationFrame(render);
