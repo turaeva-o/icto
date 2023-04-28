@@ -1,5 +1,5 @@
 import * as THREE from '../three/three.module.js';
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { GLTFLoader } from '../three/addons/loaders/GLTFLoader.js';
 function main() {
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(80, 2, 0.1, 50000);
