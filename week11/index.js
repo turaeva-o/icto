@@ -1,3 +1,5 @@
+import * as THREE from '../three/three.module.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 function main() {
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(80, 2, 0.1, 50000);
@@ -7,7 +9,7 @@ function main() {
 
     document.body.appendChild( renderer.domElement );
 
-    const geom = new THREE.BoxGeometry(20,20,20);
+   // const geom = new THREE.BoxGeometry(20,20,20);
 
     const arjs = new THREEx.LocationBased(scene, camera);
 
@@ -103,16 +105,23 @@ function main() {
         camera.updateProjectionMatrix();
     }
 
+	const loader = new GLTFLoader();
+
+	loader.load( '../assets/cat.glb', function ( cat ) {
+	console.log(cat);
+	scene.add( cat.scene );
+	
     function setupObjects(longitude, latitude) {
         // Use position of first GPS update (fake or real)
         //const material = new THREE.MeshBasicMaterial({color: 0xff0000});
         //const material2 = new THREE.MeshBasicMaterial({color: 0xffff00});
-        const material3 = new THREE.MeshBasicMaterial({color: 0x0000ff});
-        const material4 = new THREE.MeshBasicMaterial({color: 0x00ff00});
+       // const material3 = new THREE.MeshBasicMaterial({color: 0x0000ff});
+        //const material4 = new THREE.MeshBasicMaterial({color: 0x00ff00});
         //arjs.add(new THREE.Mesh(geom, material), longitude, latitude + 0.001); // slightly north
        // arjs.add(new THREE.Mesh(geom, material2), longitude, latitude - 0.001); // slightly south
-        arjs.add(new THREE.Mesh(geom, material3), longitude - 0.001, latitude); // slightly west
-        arjs.add(new THREE.Mesh(geom, material4), longitude + 0.001, latitude); // slightly east
+        //arjs.add(new THREE.Mesh(geom, material3), longitude - 0.001, latitude); // slightly west
+      //  arjs.add(new THREE.Mesh(geom, material4), longitude + 0.001, latitude); // slightly east
+	    arjs.add(new THREE.Mesh(loader), longitude + 0.001, latitude);
     }
 
     requestAnimationFrame(render);
