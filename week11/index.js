@@ -1,6 +1,6 @@
 import * as THREE from '../three/three.module.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-
+import * as THREEx from './node_modules/@ar-js-org/ar.js/three.js/build/ar-threex-location-only.js'
 
 function main() {
     const scene = new THREE.Scene();
