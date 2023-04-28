@@ -121,7 +121,8 @@ function main() {
        // arjs.add(new THREE.Mesh(geom, material2), longitude, latitude - 0.001); // slightly south
         //arjs.add(new THREE.Mesh(geom, material3), longitude - 0.001, latitude); // slightly west
       //  arjs.add(new THREE.Mesh(geom, material4), longitude + 0.001, latitude); // slightly east
-	    arjs.add(new THREE.Mesh(loader), longitude + 0.001, latitude);
+	   // arjs.add(new THREE.Mesh(loader), longitude + 0.001, latitude);
+	    cat.scene.position.set(longitude + 0.001, -Math.PI/2, latitude);
     }
 
     requestAnimationFrame(render);
