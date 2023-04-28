@@ -110,6 +110,7 @@ function main() {
 	loader.load( '../assets/cat.glb', function ( cat ) {
 	console.log(cat);
 	scene.add( cat.scene );
+   });
 	
     function setupObjects(longitude, latitude) {
         // Use position of first GPS update (fake or real)
