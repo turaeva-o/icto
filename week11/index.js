@@ -107,10 +107,11 @@ function main() {
 
 	const loader = new GLTFLoader();
 
-	loader.load( '../assets/cat.glb', function ( cat ) {
+loader.load( '../assets/cat.glb', function ( cat ) {
 	console.log(cat);
 	scene.add( cat.scene );
-   });
+	cat.scene.rotation.set(0, -Math.PI/2, 0);
+} );
 	
     function setupObjects(longitude, latitude) {
         // Use position of first GPS update (fake or real)
