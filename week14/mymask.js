@@ -21,7 +21,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 
 	const loader = new THREE.TextureLoader();
 
-	const texture = loader.load( '../assets/123.png' );
+	const texture = loader.load( '../assets/mymask-removebg-preview.png' );
 	faceMesh.material.map = texture;
 	faceMesh.material.transparent = true;
 	faceMesh.material.needsUpdate = true;
