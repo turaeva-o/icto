@@ -22,11 +22,10 @@ function main() {
     const mouseStep = THREE.MathUtils.degToRad(5);
 	
 	const loader = new GLTFLoader();
-	loader.load( '../assets/cat.glb');
-	/*loader.load( '../assets/cat.glb', function ( cat ) {
+	loader.load( '../assets/cat.glb', function ( cat ) {
 	console.log(cat);
 	scene.add( cat.scene );
-	cat.scene.rotation.set(0, -Math.PI/2, 0);});*/
+	cat.scene.rotation.set(0, -Math.PI/2, 0);});
 
 
     let orientationControls;
@@ -124,7 +123,7 @@ function main() {
         arjs.add(new THREE.Mesh(geom, material2), longitude, latitude - 0.001); // slightly south
         arjs.add(new THREE.Mesh(geom, material3), longitude - 0.001, latitude); // slightly west
         arjs.add(new THREE.Mesh(geom, material4), longitude + 0.001, latitude); // slightly east
-	arjs.add(loader, longitude, latitude + 0.001);
+	arjs.add(new GLTFLoader(cat.scene), longitude, latitude + 0.001);
     }
 
     requestAnimationFrame(render);
