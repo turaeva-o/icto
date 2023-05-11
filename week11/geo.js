@@ -126,7 +126,7 @@ async function main() {
         arjs.add(new THREE.Mesh(geom, material3), longitude - 0.001, latitude); // slightly west
         arjs.add(new THREE.Mesh(geom, material4), longitude + 0.001, latitude); // slightly east*/
 	//if(cat)
-	arjs.add(cat.scene, longitude - 0.001 || longitude + 0.001, latitude);
+	arjs.add(cat.scene, longitude - 0.001 & longitude + 0.001, latitude);
 	//arjs.add(cat.scene, longitude + 0.001, latitude);
     }
 
