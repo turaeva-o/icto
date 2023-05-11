@@ -34,8 +34,8 @@ async function main() {
     });
 
 	await loader.load( '../assets/dog.glb', function ( dog) {
-	dog.scene.rotation.set(0, Math.PI/4, 0);
-	dog.scene.scale.set(20, 20, 20);
+	//dog.scene.rotation.set(0, Math.PI/4, 0);
+	dog.scene.scale.set(2, 2, 2);
     });
 	
 	
