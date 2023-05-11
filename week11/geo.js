@@ -32,14 +32,7 @@ async function main() {
 	cat.scene.rotation.set(0, Math.PI/4, 0);
 	cat.scene.scale.set(20, 20, 20);
     });
-
-	/*await loader.load( '../assets/dog.glb', function ( dog) {
-	//dog.scene.rotation.set(0, Math.PI/4, 0);
-	dog.scene.scale.set(2, 2, 2);
-    });*/
 	
-	
-
     let orientationControls;
 
 
@@ -134,8 +127,8 @@ async function main() {
         arjs.add(new THREE.Mesh(geom, material4), longitude + 0.001, latitude); // slightly east*/
 	//if(cat)
 	arjs.add(cat.scene, longitude - 0.001, latitude);
-	arjs.add(cat.scene, longitude + 0.001, latitude);
-	//arjs.add(dog.scene, longitude, latitude - 0.001);
+	//arjs.add(cat.scene, longitude + 0.001, latitude);
+	arjs.add(cat.scene, longitude, latitude - 0.001);
     }
 
     requestAnimationFrame(render);
