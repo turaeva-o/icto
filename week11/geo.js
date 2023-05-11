@@ -29,7 +29,7 @@ async function main() {
    const loader = new GLTFLoader();
    await loader.load( '../assets/cat.glb', function ( model ) {
 	cat = model;
-	cat.scene.rotation.set(0, -Math.PI/2, 0);
+	cat.scene.rotation.set(0, Math.PI/2, 0);
 	cat.scene.scale.set(20, 20, 20);
     });
 
