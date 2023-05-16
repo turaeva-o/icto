@@ -1,7 +1,5 @@
 ﻿import * as THREE from '../three/three.module.js';
 
-// Our Javascript will go here.
-
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera( 35, window.innerWidth / window.innerHeight, 0.1, 3000 );
 
@@ -9,16 +7,6 @@ const renderer = new THREE.WebGLRenderer({antialias: true});
 renderer.setSize( window.innerWidth, window.innerHeight );
 renderer.setClearColor(0xCBEFFF,1);
 renderer.setPixelRatio(window.devicePixelRatio);
-
-//var lightOne=new THREE.AmbientLight(0xffffff, 0.5); 
-//scene.add(lightOne);
-
-//var lightTwo=new THREE.PointLight(0xffffff, 0.5);
-//scene.add(lightTwo);
-//lightTwo.position.set(-1.5, 0, -1);
-
-//const light3 = new THREE.HemisphereLight( 0xffffbb, 0x080820, 1 );
-//scene.add( light3 );
 
 camera.position.z = 3;
 
@@ -123,11 +111,87 @@ torus7mesh.rotation.set(Math.PI/2, 0, 0);
 torus7mesh.scale.set(0.4, 0.4, 0.5);
 scene.add(torus7mesh);
 
+
+let animations = [
+	[ //0
+		torus7mesh, // obj (mesh)
+		[0.65, 0.86, +0.01], // y: ystart, yend, ystep
+		[-1, 1, +0.01], // x: xstart, xend, xstep
+		[0.80, -0.37, -0.01] //y: ystart, yend, ystep
+	],
+	[ //1
+		torus6mesh, // obj (mesh)
+		[0.65, 0.86, +0.01], // y: ystart, yend, ystep
+		[-1, 0, +0.01], // x: xstart, xend, xstep
+		[0.80, -0.37, -0.01] //y: ystart, yend, ystep
+	],
+	[ //2
+		torus5mesh, // obj (mesh)
+		[0.65, 0.86, +0.01], // y: ystart, yend, ystep
+		[-1, 1, +0.01], // x: xstart, xend, xstep
+		[0.80, -0.2, -0.01] //y: ystart, yend, ystep
+	],
+	[ //3
+		torus4mesh, // obj (mesh)
+		[0.65, 0.86, +0.01], // y: ystart, yend, ystep
+		[-1, 0, +0.01], // x: xstart, xend, xstep
+		[0.80, -0.2, -0.01] //y: ystart, yend, ystep
+	],
+	[ //4
+		torus3mesh, // obj (mesh)
+		[0.65, 0.86, +0.01], // y: ystart, yend, ystep
+		[-1, 1, +0.01], // x: xstart, xend, xstep
+		[0.80, -0.03, -0.01] //y: ystart, yend, ystep
+	],
+	[ //5
+		torus2mesh, // obj (mesh)
+		[0.65, 0.86, +0.01], // y: ystart, yend, ystep
+		[-1, 0, +0.01], // x: xstart, xend, xstep
+		[0.80, -0.03, -0.01] //y: ystart, yend, ystep
+	],
+	[ //6
+		torusmesh, // obj (mesh)
+		[0.65, 0.86, +0.01], // y: ystart, yend, ystep
+		[-1, 1, +0.01], // x: xstart, xend, xstep
+		[0.80, 0.14, -0.01] //y: ystart, yend, ystep
+	],
+];
+
+let step = 1;
+let object = 0;
+
 //Створення функції animate
 function animate() {
-	//torus7mesh.position.y.loop+=0.1;
-	//torus7mesh.position.x+=0.5;
-        //THREE.ZeroCurvatureEnding;
+	if(object < animations.length)
+	{
+		const mesh = animations[object][0];
+		const move = animations[object][step];
+		const start = animations[object][step][0];
+		const end = animations[object][step][1];
+		const delta = animations[object][step][2];
+
+		if(step === 1)
+		{
+			mesh.position.y += delta;
+			if(Math.abs(mesh.position.y-end) < Math.abs(delta)/2)
+				step = 2;
+		}
+		else if(step === 2)
+		{
+			mesh.position.x += delta;
+			if(Math.abs(mesh.position.x-end) < Math.abs(delta)/2)
+				step = 3;
+		}
+		else //if(step === 3)
+		{
+			mesh.position.y += delta;
+			if(Math.abs(mesh.position.y-end) < Math.abs(delta)/2)
+			{
+				step = 1;	
+				object++;
+			}
+		}
+	}
 	renderer.render(scene, camera);
 	requestAnimationFrame(animate);
 }
