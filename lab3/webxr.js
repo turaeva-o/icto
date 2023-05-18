@@ -99,11 +99,6 @@ function initialize()
 		camera.projectionMatrix.copy( arToolkitContext.getProjectionMatrix() );
 	});
 
-	////////////////////////////////////////////////////////////
-	// setup markerRoots
-	////////////////////////////////////////////////////////////
-
-
 
 var boxgeometry=new THREE.BoxGeometry(0.8, 0.1, 0.8);
 var boxmaterial=new THREE.MeshBasicMaterial({color: 0x000000});
@@ -201,9 +196,9 @@ let group = new THREE.Group();
 
 scene.add(group);
 
-let markerControls = new THREEx.ArMarkerControls(arToolkitContext, group, {
+/*let markerControls = new THREEx.ArMarkerControls(arToolkitContext, group, {
 		type : 'pattern', patternUrl : "../assets/pattern-hanoi.patt",
-});
+});*/
 
 	//markerHanoi.add( group );
 
@@ -278,7 +273,7 @@ animations = [
 
 }
 
-window.addEventListener("markerFound", (evt) => {
+/*window.addEventListener("markerFound", (evt) => {
 	//console.log("markerFound");
 	//console.log(evt);
 	markerVisible = true;
@@ -290,12 +285,12 @@ window.addEventListener("markerLost", (evt) => {
 	markerVisible = false;
 	step = 1;
 	object = 0;
-});
+});*/
 
 function animate()
 {
-	if(markerVisible)
-	{
+	/*if(markerVisible)
+	{*/
 		if(object < animations.length)
 		{
 			const mesh = animations[object][0];
@@ -328,7 +323,7 @@ function animate()
 				}
 			}
 		}
-	}
+	//}
 	requestAnimationFrame(animate);
 	// update artoolkit on every frame
 	if ( arToolkitSource.ready !== false )
