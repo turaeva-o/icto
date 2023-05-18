@@ -24,10 +24,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 		
 	var boxgeometry=new THREE.BoxGeometry(0.8, 0.1, 0.8);
-var boxmaterial=new THREE.MeshBasicMaterial({color: 0x000000});
-var boxmesh=new THREE.Mesh(boxgeometry, boxmaterial);
-boxmesh.position.set(-1, -0.5, 0);
-scene.add(boxmesh);
+	var boxmaterial=new THREE.MeshBasicMaterial({color: 0x000000});
+	var boxmesh=new THREE.Mesh(boxgeometry, boxmaterial);
+	boxmesh.position.set(-1, -0.5, 0);
+	boxmesh.scale.set(0.2, 0.2, 0.2);
+	scene.add(boxmesh);
 
 var box2geometry=new THREE.BoxGeometry(0.8, 0.1, 0.8);
 var box2material=new THREE.MeshBasicMaterial({color: 0x000000});
