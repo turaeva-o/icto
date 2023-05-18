@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	scene.add(light);
 
 	
-
+	camera.position.z = 5;
 		
 	var boxgeometry=new THREE.BoxGeometry(0.8, 0.1, 0.8);
 	var boxmaterial=new THREE.MeshBasicMaterial({color: 0x000000});
