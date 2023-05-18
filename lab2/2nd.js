@@ -1,5 +1,15 @@
-﻿var scene, camera, renderer;
+﻿﻿var scene, camera, renderer;
 var arToolkitSource, arToolkitContext;
+let torus7mesh, torus6mesh, torus5mesh, torus4mesh, torus3mesh, torus2mesh, torusmesh;
+
+let markerVisible = false;
+
+let step = 1;
+let object = 0;
+
+let animations;
+
+
 
 document.addEventListener("DOMContentLoaded", initialize);
 
@@ -24,8 +34,6 @@ function initialize()
 	////////////////////////////////////////////////////////////
 	// setup arToolkitSource
 	////////////////////////////////////////////////////////////
-
-	var arToolkitSource, arToolkitContext;
 
 	arToolkitSource = new THREEx.ArToolkitSource({
 		sourceType : 'webcam',
@@ -74,20 +82,7 @@ function initialize()
 
 
 
-	let markerHanoi = new THREE.Group();
-
-	scene.add(markerHanoi);
-
-	let markerControls = new THREEx.ArMarkerControls(arToolkitContext, markerHanoi, {
-			type : 'pattern', patternUrl : "../assets/pattern-hanoi.patt",
-		});
-
-	//markerHanoi.add( group );
-
-
-
-
-	var boxgeometry=new THREE.BoxGeometry(0.8, 0.1, 0.8);
+var boxgeometry=new THREE.BoxGeometry(0.8, 0.1, 0.8);
 var boxmaterial=new THREE.MeshBasicMaterial({color: 0x000000});
 var boxmesh=new THREE.Mesh(boxgeometry, boxmaterial);
 boxmesh.position.set(-1, -0.5, 0);
@@ -125,7 +120,7 @@ cylinder3mesh.position.set(1, 0.1, 0);
 
 var torusgeometry = new THREE.TorusGeometry( 0.24, 0.17, 30, 100 ); 
 var torusmaterial = new THREE.MeshBasicMaterial( { color: 0xff0000 } ); 
-var torusmesh=new THREE.Mesh(torusgeometry, torusmaterial);
+torusmesh=new THREE.Mesh(torusgeometry, torusmaterial);
 torusmesh.position.set(-1, -0.37, 0);
 torusmesh.rotation.set(Math.PI/2, 0, 0);
 torusmesh.scale.set(1, 1, 0.5);
@@ -133,7 +128,7 @@ torusmesh.scale.set(1, 1, 0.5);
 
 var torus2geometry = new THREE.TorusGeometry( 0.24, 0.17, 30, 100 ); 
 var torus2material = new THREE.MeshBasicMaterial( { color: 0xff8c00 } ); 
-var torus2mesh=new THREE.Mesh(torus2geometry, torus2material);
+torus2mesh=new THREE.Mesh(torus2geometry, torus2material);
 torus2mesh.position.set(-1, -0.2, 0);
 torus2mesh.rotation.set(Math.PI/2, 0, 0);
 torus2mesh.scale.set(0.9, 0.9, 0.5);
@@ -141,7 +136,7 @@ torus2mesh.scale.set(0.9, 0.9, 0.5);
 
 var torus3geometry = new THREE.TorusGeometry( 0.24, 0.17, 30, 100 ); 
 var torus3material = new THREE.MeshBasicMaterial( { color: 0xffff00 } ); 
-var torus3mesh=new THREE.Mesh(torus3geometry, torus3material);
+torus3mesh=new THREE.Mesh(torus3geometry, torus3material);
 torus3mesh.position.set(-1, -0.03, 0);
 torus3mesh.rotation.set(Math.PI/2, 0, 0);
 torus3mesh.scale.set(0.8, 0.8, 0.5);
@@ -149,7 +144,7 @@ torus3mesh.scale.set(0.8, 0.8, 0.5);
 
 var torus4geometry = new THREE.TorusGeometry( 0.24, 0.17, 30, 100 ); 
 var torus4material = new THREE.MeshBasicMaterial( { color: 0x008000 } ); 
-var torus4mesh=new THREE.Mesh(torus4geometry, torus4material);
+torus4mesh=new THREE.Mesh(torus4geometry, torus4material);
 torus4mesh.position.set(-1, 0.14, 0);
 torus4mesh.rotation.set(Math.PI/2, 0, 0);
 torus4mesh.scale.set(0.7, 0.7, 0.5);
@@ -157,7 +152,7 @@ torus4mesh.scale.set(0.7, 0.7, 0.5);
 
 var torus5geometry = new THREE.TorusGeometry( 0.24, 0.17, 30, 100 ); 
 var torus5material = new THREE.MeshBasicMaterial( { color: 0x00bfff } ); 
-var torus5mesh=new THREE.Mesh(torus5geometry, torus5material);
+torus5mesh=new THREE.Mesh(torus5geometry, torus5material);
 torus5mesh.position.set(-1, 0.31, 0);
 torus5mesh.rotation.set(Math.PI/2, 0, 0);
 torus5mesh.scale.set(0.6, 0.6, 0.5);
@@ -165,7 +160,7 @@ torus5mesh.scale.set(0.6, 0.6, 0.5);
 
 var torus6geometry = new THREE.TorusGeometry( 0.24, 0.17, 30, 100 ); 
 var torus6material = new THREE.MeshBasicMaterial( { color: 0x0000ff } ); 
-var torus6mesh=new THREE.Mesh(torus6geometry, torus6material);
+torus6mesh=new THREE.Mesh(torus6geometry, torus6material);
 torus6mesh.position.set(-1, 0.48, 0);
 torus6mesh.rotation.set(Math.PI/2, 0, 0);
 torus6mesh.scale.set(0.5, 0.5, 0.5);
@@ -173,13 +168,24 @@ torus6mesh.scale.set(0.5, 0.5, 0.5);
 
 var torus7geometry = new THREE.TorusGeometry( 0.24, 0.17, 30, 100 ); 
 var torus7material = new THREE.MeshBasicMaterial( { color: 0x800080 } ); 
-var torus7mesh=new THREE.Mesh(torus7geometry, torus7material);
+torus7mesh=new THREE.Mesh(torus7geometry, torus7material);
 torus7mesh.position.set(-1, 0.65, 0);
 torus7mesh.rotation.set(Math.PI/2, 0, 0);
 torus7mesh.scale.set(0.4, 0.4, 0.5);
 //scene.add(torus7mesh);
 
-const group = new THREE.Group();
+let group = new THREE.Group();
+
+scene.add(group);
+
+let markerControls = new THREEx.ArMarkerControls(arToolkitContext, group, {
+		type : 'pattern', patternUrl : "../assets/pattern-hanoi.patt",
+});
+
+	//markerHanoi.add( group );
+
+
+//const group = new THREE.Group();
 group.add( boxmesh );
 group.add( box2mesh );
 group.add( box3mesh );
@@ -194,10 +200,13 @@ group.add( torus5mesh );
 group.add( torus6mesh );
 group.add( torus7mesh );
 
-scene.add( group );
+//scene.add( group );
 group.scale.set( 0.5, 0.5, 0.5 );
+group.rotation.set(-Math.PI/2, 0, 0);
 
-let animations = [
+//markerHanoi.add( group );
+
+animations = [
 	[ //0
 		torus7mesh, // obj (mesh)
 		[0.65, 0.86, +0.01], // y: ystart, yend, ystep
@@ -242,51 +251,66 @@ let animations = [
 	],
 ];
 
-let step = 1;
-let object = 0;
-
-markerHanoi.add( group );
-
 
 	animate();
+
 }
+
+
+window.addEventListener("markerFound", (evt) => {
+	//console.log("markerFound");
+	//console.log(evt);
+	markerVisible = true;
+});
+
+
+window.addEventListener("markerLost", (evt) => {
+	//console.log("markerLost");
+	//console.log(evt);
+	markerVisible = false;
+	step = 1;
+	object = 0;
+});
 
 
 function animate()
 {
 
-
-	if(object < animations.length)
+	if(markerVisible)
 	{
-		const mesh = animations[object][0];
-		const move = animations[object][step];
-		const start = animations[object][step][0];
-		const end = animations[object][step][1];
-		const delta = animations[object][step][2];
+		if(object < animations.length)
+		{
+			const mesh = animations[object][0];
+			const move = animations[object][step];
+			const start = animations[object][step][0];
+			const end = animations[object][step][1];
+			const delta = animations[object][step][2];
 
-		if(step === 1)
-		{
-			mesh.position.y += delta;
-			if(Math.abs(mesh.position.y-end) < Math.abs(delta)/2)
-				step = 2;
-		}
-		else if(step === 2)
-		{
-			mesh.position.x += delta;
-			if(Math.abs(mesh.position.x-end) < Math.abs(delta)/2)
-				step = 3;
-		}
-		else //if(step === 3)
-		{
-			mesh.position.y += delta;
-			if(Math.abs(mesh.position.y-end) < Math.abs(delta)/2)
+			//console.log(animations[object]);
+
+			if(step === 1)
 			{
-				step = 1;	
-				object++;
+				mesh.position.y += delta;
+				if(Math.abs(mesh.position.y-end) < Math.abs(delta)/2)
+					step = 2;
+			}
+			else if(step === 2)
+			{
+				mesh.position.x += delta;
+				if(Math.abs(mesh.position.x-end) < Math.abs(delta)/2)
+					step = 3;
+			}
+			else //if(step === 3)
+			{
+				mesh.position.y += delta;
+				if(Math.abs(mesh.position.y-end) < Math.abs(delta)/2)
+				{
+					step = 1;	
+					object++;
+				}
 			}
 		}
 	}
-
 
 
 	requestAnimationFrame(animate);
