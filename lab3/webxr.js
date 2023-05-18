@@ -42,19 +42,19 @@ document.addEventListener("DOMContentLoaded", async () => {
 	var cylindergeometry = new THREE.CylinderGeometry( 0.05, 0.05, 1.3, 32 ); 
 	var cylindermaterial = new THREE.MeshBasicMaterial( {color: 0x000000} ); 
 	var cylindermesh=new THREE.Mesh(cylindergeometry, cylindermaterial);
-	cylindermesh.position.set(-1, 0.1, 0);
+	cylindermesh.position.set(-1, 0.1, -0.5);
 	scene.add(cylindermesh);
 
 	var cylinder2geometry = new THREE.CylinderGeometry( 0.05, 0.05, 1.3, 32 ); 
 	var cylinder2material = new THREE.MeshBasicMaterial( {color: 0x000000} ); 
 	var cylinder2mesh=new THREE.Mesh(cylinder2geometry, cylinder2material);
-	cylinder2mesh.position.set(0, 0.1, 0);
+	cylinder2mesh.position.set(0, 0.1, -0.5);
 	scene.add(cylinder2mesh);
 
 	var cylinder3geometry = new THREE.CylinderGeometry( 0.05, 0.05, 1.3, 32 ); 
 	var cylinder3material = new THREE.MeshBasicMaterial( {color: 0x000000} ); 
 	var cylinder3mesh=new THREE.Mesh(cylinder3geometry, cylinder3material);
-	cylinder3mesh.position.set(1, 0.1, 0);
+	cylinder3mesh.position.set(1, 0.1, -0.5);
 	scene.add(cylinder3mesh);
 
 	var torusgeometry = new THREE.TorusGeometry( 0.24, 0.17, 30, 100 ); 
