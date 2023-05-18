@@ -24,19 +24,19 @@ document.addEventListener("DOMContentLoaded", async () => {
 	var boxgeometry=new THREE.BoxGeometry(0.8, 0.1, 0.8);
 	var boxmaterial=new THREE.MeshBasicMaterial({color: 0x000000});
 	var boxmesh=new THREE.Mesh(boxgeometry, boxmaterial);
-	boxmesh.position.set(-1, -0.5, -2);
+	boxmesh.position.set(-1, -0.5, 0);
 	scene.add(boxmesh);
 
 	var box2geometry=new THREE.BoxGeometry(0.8, 0.1, 0.8);
 	var box2material=new THREE.MeshBasicMaterial({color: 0x000000});
 	var box2mesh=new THREE.Mesh(box2geometry, box2material);
-	box2mesh.position.set(0, -0.5, -2);
+	box2mesh.position.set(0, -0.5, 0);
 	scene.add(box2mesh);
 
 	var box3geometry=new THREE.BoxGeometry(0.8, 0.1, 0.8);
 	var box3material=new THREE.MeshBasicMaterial({color: 0x000000});
 	var box3mesh=new THREE.Mesh(box3geometry, box3material);
-	box3mesh.position.set(1, -0.5, -2);
+	box3mesh.position.set(1, -0.5, 0);
 	scene.add(box3mesh);
 
 	var cylindergeometry = new THREE.CylinderGeometry( 0.05, 0.05, 1.3, 32 ); 
