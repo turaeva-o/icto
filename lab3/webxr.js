@@ -25,37 +25,37 @@ document.addEventListener("DOMContentLoaded", async () => {
 	var boxmaterial=new THREE.MeshBasicMaterial({color: 0x000000});
 	var boxmesh=new THREE.Mesh(boxgeometry, boxmaterial);
 	boxmesh.position.set(-1, -0.5, -2);
-	//scene.add(boxmesh);
+	scene.add(boxmesh);
 
 	var box2geometry=new THREE.BoxGeometry(0.8, 0.1, 0.8);
 	var box2material=new THREE.MeshBasicMaterial({color: 0x000000});
 	var box2mesh=new THREE.Mesh(box2geometry, box2material);
 	box2mesh.position.set(0, -0.5, -2);
-	//scene.add(box2mesh);
+	scene.add(box2mesh);
 
 	var box3geometry=new THREE.BoxGeometry(0.8, 0.1, 0.8);
 	var box3material=new THREE.MeshBasicMaterial({color: 0x000000});
 	var box3mesh=new THREE.Mesh(box3geometry, box3material);
 	box3mesh.position.set(1, -0.5, -2);
-	//scene.add(box3mesh);
+	scene.add(box3mesh);
 
 	var cylindergeometry = new THREE.CylinderGeometry( 0.05, 0.05, 1.3, 32 ); 
 	var cylindermaterial = new THREE.MeshBasicMaterial( {color: 0x000000} ); 
 	var cylindermesh=new THREE.Mesh(cylindergeometry, cylindermaterial);
 	cylindermesh.position.set(-1, 0.1, 0);
-	//scene.add(cylindermesh);
+	scene.add(cylindermesh);
 
 	var cylinder2geometry = new THREE.CylinderGeometry( 0.05, 0.05, 1.3, 32 ); 
 	var cylinder2material = new THREE.MeshBasicMaterial( {color: 0x000000} ); 
 	var cylinder2mesh=new THREE.Mesh(cylinder2geometry, cylinder2material);
 	cylinder2mesh.position.set(0, 0.1, 0);
-	//scene.add(cylinder2mesh);
+	scene.add(cylinder2mesh);
 
 	var cylinder3geometry = new THREE.CylinderGeometry( 0.05, 0.05, 1.3, 32 ); 
 	var cylinder3material = new THREE.MeshBasicMaterial( {color: 0x000000} ); 
 	var cylinder3mesh=new THREE.Mesh(cylinder3geometry, cylinder3material);
 	cylinder3mesh.position.set(1, 0.1, 0);
-	//scene.add(cylinder3mesh);
+	scene.add(cylinder3mesh);
 
 	var torusgeometry = new THREE.TorusGeometry( 0.24, 0.17, 30, 100 ); 
 	var torusmaterial = new THREE.MeshBasicMaterial( { color: 0xff0000 } ); 
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	torusmesh.position.set(-1, -0.37, 0);
 	torusmesh.rotation.set(Math.PI/2, 0, 0);
 	torusmesh.scale.set(1, 1, 0.5);
-	//scene.add(torusmesh);
+	scene.add(torusmesh);
 
 	var torus2geometry = new THREE.TorusGeometry( 0.24, 0.17, 30, 100 ); 
 	var torus2material = new THREE.MeshBasicMaterial( { color: 0xff8c00 } ); 
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	torus2mesh.position.set(-1, -0.2, 0);
 	torus2mesh.rotation.set(Math.PI/2, 0, 0);
 	torus2mesh.scale.set(0.9, 0.9, 0.5);
-	//scene.add(torus2mesh);
+	scene.add(torus2mesh);
 
 	var torus3geometry = new THREE.TorusGeometry( 0.24, 0.17, 30, 100 ); 
 	var torus3material = new THREE.MeshBasicMaterial( { color: 0xffff00 } ); 
@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	torus3mesh.position.set(-1, -0.03, 0);
 	torus3mesh.rotation.set(Math.PI/2, 0, 0);
 	torus3mesh.scale.set(0.8, 0.8, 0.5);
-	//scene.add(torus3mesh);
+	scene.add(torus3mesh);
 
 	var torus4geometry = new THREE.TorusGeometry( 0.24, 0.17, 30, 100 ); 
 	var torus4material = new THREE.MeshBasicMaterial( { color: 0x008000 } ); 
@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	torus4mesh.position.set(-1, 0.14, 0);
 	torus4mesh.rotation.set(Math.PI/2, 0, 0);
 	torus4mesh.scale.set(0.7, 0.7, 0.5);
-	//scene.add(torus4mesh);
+	scene.add(torus4mesh);
 
 	var torus5geometry = new THREE.TorusGeometry( 0.24, 0.17, 30, 100 ); 
 	var torus5material = new THREE.MeshBasicMaterial( { color: 0x00bfff } ); 
@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	torus5mesh.position.set(-1, 0.31, 0);
 	torus5mesh.rotation.set(Math.PI/2, 0, 0);
 	torus5mesh.scale.set(0.6, 0.6, 0.5);
-	//scene.add(torus5mesh);
+	scene.add(torus5mesh);
 
 	var torus6geometry = new THREE.TorusGeometry( 0.24, 0.17, 30, 100 ); 
 	var torus6material = new THREE.MeshBasicMaterial( { color: 0x0000ff } ); 
@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	torus6mesh.position.set(-1, 0.48, 0);
 	torus6mesh.rotation.set(Math.PI/2, 0, 0);
 	torus6mesh.scale.set(0.5, 0.5, 0.5);
-	//scene.add(torus6mesh);
+	scene.add(torus6mesh);
 
 	var torus7geometry = new THREE.TorusGeometry( 0.24, 0.17, 30, 100 ); 
 	var torus7material = new THREE.MeshBasicMaterial( { color: 0x800080 } ); 
@@ -111,26 +111,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	torus7mesh.position.set(-1, 0.65, 0);
 	torus7mesh.rotation.set(Math.PI/2, 0, 0);
 	torus7mesh.scale.set(0.4, 0.4, 0.5);
-	//scene.add(torus7mesh);
-
-	
-const group = new THREE.Group();
-group.add( boxmesh );
-group.add( box2mesh );
-group.add( box3mesh );
-group.add( cylindermesh );
-group.add( cylinder2mesh );
-group.add( cylinder3mesh );
-group.add( torusmesh );
-group.add( torus2mesh );
-group.add( torus3mesh );
-group.add( torus4mesh );
-group.add( torus5mesh );
-group.add( torus6mesh );
-group.add( torus7mesh );
-
-scene.add( group);
-group.scale.set( 0.5, 0.5, 0.5 );
+	scene.add(torus7mesh);
 
 
 let animations = [
@@ -219,20 +200,6 @@ function animate() {
 
 //Виклик функції animate
 animate();
-
-
-
-
-
-
-
-
-
-	/*}, function ( xhr ) {
-		console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded') ;
-	}, function ( error ) {
-		console.error( error );
-	} );*/
 
 	renderer.xr.enabled = true;
 
