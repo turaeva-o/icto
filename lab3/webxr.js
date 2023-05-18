@@ -19,45 +19,43 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 	const light = new THREE.HemisphereLight(0xffffff, 0xbbbbff, 1);
 	scene.add(light);
-
-	
-	camera.position.z = 5;
 		
 	var boxgeometry=new THREE.BoxGeometry(0.8, 0.1, 0.8);
 	var boxmaterial=new THREE.MeshBasicMaterial({color: 0x000000});
 	var boxmesh=new THREE.Mesh(boxgeometry, boxmaterial);
 	boxmesh.position.set(-1, -0.5, 0);
-	//scene.add(boxmesh);
+	boxmesh.scale.set(0.5, 0.5, 0.5);
+	
 
 	var box2geometry=new THREE.BoxGeometry(0.8, 0.1, 0.8);
 	var box2material=new THREE.MeshBasicMaterial({color: 0x000000});
 	var box2mesh=new THREE.Mesh(box2geometry, box2material);
 	box2mesh.position.set(0, -0.5, 0);
-	//scene.add(box2mesh);
+	box2mesh.scale.set(0.5, 0.5, 0.5);
 
 	var box3geometry=new THREE.BoxGeometry(0.8, 0.1, 0.8);
 	var box3material=new THREE.MeshBasicMaterial({color: 0x000000});
 	var box3mesh=new THREE.Mesh(box3geometry, box3material);
 	box3mesh.position.set(1, -0.5, 0);
-	//scene.add(box3mesh);
+	box3mesh.scale.set(0.5, 0.5, 0.5);
 
 	var cylindergeometry = new THREE.CylinderGeometry( 0.05, 0.05, 1.3, 32 ); 
 	var cylindermaterial = new THREE.MeshBasicMaterial( {color: 0x000000} ); 
 	var cylindermesh=new THREE.Mesh(cylindergeometry, cylindermaterial);
 	cylindermesh.position.set(-1, 0.1, 0);
-	//scene.add(cylindermesh);
+	cylindermesh.scale.set(0.5, 0.5, 0.5);
 
 	var cylinder2geometry = new THREE.CylinderGeometry( 0.05, 0.05, 1.3, 32 ); 
 	var cylinder2material = new THREE.MeshBasicMaterial( {color: 0x000000} ); 
 	var cylinder2mesh=new THREE.Mesh(cylinder2geometry, cylinder2material);
 	cylinder2mesh.position.set(0, 0.1, 0);
-	//scene.add(cylinder2mesh);
+	cylinder2mesh.scale.set(0.5, 0.5, 0.5);
 
 	var cylinder3geometry = new THREE.CylinderGeometry( 0.05, 0.05, 1.3, 32 ); 
 	var cylinder3material = new THREE.MeshBasicMaterial( {color: 0x000000} ); 
 	var cylinder3mesh=new THREE.Mesh(cylinder3geometry, cylinder3material);
 	cylinder3mesh.position.set(1, 0.1, 0);
-	//scene.add(cylinder3mesh);
+	cylinder3mesh.scale.set(0.5, 0.5, 0.5);
 
 	var torusgeometry = new THREE.TorusGeometry( 0.24, 0.17, 30, 100 ); 
 	var torusmaterial = new THREE.MeshBasicMaterial( { color: 0xff0000 } ); 
@@ -65,7 +63,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	torusmesh.position.set(-1, -0.37, 0);
 	torusmesh.rotation.set(Math.PI/2, 0, 0);
 	torusmesh.scale.set(1, 1, 0.5);
-	//scene.add(torusmesh);
+	
 
 	var torus2geometry = new THREE.TorusGeometry( 0.24, 0.17, 30, 100 ); 
 	var torus2material = new THREE.MeshBasicMaterial( { color: 0xff8c00 } ); 
@@ -73,7 +71,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	torus2mesh.position.set(-1, -0.2, 0);
 	torus2mesh.rotation.set(Math.PI/2, 0, 0);
 	torus2mesh.scale.set(0.9, 0.9, 0.5);
-	//scene.add(torus2mesh);
+	
 
 	var torus3geometry = new THREE.TorusGeometry( 0.24, 0.17, 30, 100 ); 
 	var torus3material = new THREE.MeshBasicMaterial( { color: 0xffff00 } ); 
@@ -81,7 +79,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	torus3mesh.position.set(-1, -0.03, 0);
 	torus3mesh.rotation.set(Math.PI/2, 0, 0);
 	torus3mesh.scale.set(0.8, 0.8, 0.5);
-	//scene.add(torus3mesh);
+	
 
 	var torus4geometry = new THREE.TorusGeometry( 0.24, 0.17, 30, 100 ); 
 	var torus4material = new THREE.MeshBasicMaterial( { color: 0x008000 } ); 
