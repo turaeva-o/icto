@@ -129,7 +129,7 @@ group.add( torus5mesh );
 group.add( torus6mesh );
 group.add( torus7mesh );
 
-scene.add( group.scene );
+scene.add( group );
 group.scale.set( 0.5, 0.5, 0.5 );
 
 
